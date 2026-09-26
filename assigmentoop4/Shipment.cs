@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assigmentoop4
 {
-    internal class Shipment
+    internal abstract  class Shipment
     {
         private string _trackingcode;
         private string _description;
@@ -70,13 +70,8 @@ namespace assigmentoop4
                 }
             }
         }
-        public virtual decimal estimatedcost
-        {
-            get
-            {
-                return delevaryfee + (weight * 5);
-            }
-        }
+        public abstract  decimal estimatedcost { get; }
+       
         public Shipment(string Trackingcode)
         {
             trackingcode = Trackingcode;
@@ -105,11 +100,8 @@ namespace assigmentoop4
             }
 
         }
-        public virtual void printshipment()
-        {
-            Console.WriteLine($"tracking code:{trackingcode},description:{description},weight:{weight}),delevaryfee:{delevaryfee},destiontion:{destination}");
+        public abstract void printshipment();
 
-        }
         public void upadteweight(decimal newweight)
         {
             weight = newweight;
@@ -122,5 +114,7 @@ namespace assigmentoop4
 
     }
 }
+    
+
     
 

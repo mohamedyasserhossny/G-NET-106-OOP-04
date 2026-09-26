@@ -82,6 +82,26 @@ namespace assigmentoop4
                 }
             }
         }
+        public void printtrackingstatus()
+        {
+            foreach(Shipment shipment in shipments)
+            {
+                if (shipment != null&& shipment is ITrackable trackable)
+                {
+                    Console.WriteLine(trackable.gettrackingstatus);
+                }
+            }
+        }
+        public void printinsurance()
+        {
+            foreach(Shipment shipment in shipments)
+            {
+                if(shipment!=null&& shipment is IInsurable insurable)
+                {
+                    Console.WriteLine(insurable.calculateinsurance);
+                }
+            }
+        }
 
     }
 }

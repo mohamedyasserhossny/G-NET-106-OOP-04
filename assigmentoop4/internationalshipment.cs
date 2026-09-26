@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assigmentoop4
 {
-    internal class internationalshipment:Shipment
+    internal class internationalshipment:Shipment,ITrackable,IInsurable
     {
         private string _destiontioncountry;
         private decimal _customfee;
@@ -59,6 +59,14 @@ namespace assigmentoop4
         public virtual void genatrecustomreports()
         {
 
+        }
+        public string gettrackingstatus()
+        {
+            return $"shipment {trackingcode} been dlevered";
+        }
+        public decimal calculateinsurance()
+        {
+            return estimatedcost * 0.012m;
         }
 
 

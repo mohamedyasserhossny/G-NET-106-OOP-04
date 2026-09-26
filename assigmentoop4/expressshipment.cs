@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assigmentoop4
 {
-    internal class expressshipment:Shipment
+    internal class expressshipment:Shipment,ITrackable,IInsurable
     {
         private decimal _extrafee;
         public decimal Extrafee
@@ -37,6 +37,14 @@ namespace assigmentoop4
         public override void printshipment()
         {
             Console.WriteLine($"tracking:{trackingcode},description{description},weight{weight},delevaryfee{delevaryfee},estimatedcost{estimatedcost},extrafee{Extrafee}");
+        }
+        public string gettrackingstatus()
+        {
+            return $"shipment ,{trackingcode},outfor delevary";
+        }
+          public  decimal calculateinsurance()
+        {
+            return estimatedcost * 0.08m;
         }
     }
 
